@@ -30,3 +30,10 @@ tap.test('vcheck example', function vcheck(t) {
     '*2.4-SNAPSHOT* • revision <https://a-team.csint.cz/stash/projects/webapi/repos/webapi/commits/a245dc97ec7bbe9ed6cb9fc1025dd846fefc7c89|a245dc9> • build 2015-09-07 14:06 • wbl 1.3.33 • <http://www.csast.csas.cz/at/webapi/api/v1/version|details »>');
   t.end();
 });
+
+tap.test('vcheck example', function vcheck(t) {
+  t.equals(slackify('<p>2.4-SNAPSHOT</p>This is the new<br/>way of doing things<p>Hello</p>'),
+    '\n2.4-SNAPSHOT\nThis is the new\nway of doing things\nHello\n')
+
+  t.end();
+});
